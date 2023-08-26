@@ -1,48 +1,40 @@
-import requests, telebot, json
+import requests , telebot
 from telebot import types
-bot = telebot.TeleBot("6526952981:AAE92yKJTHDekJlqP8Us16Gy2A1S-KbrlkI")
 
-'''
+bot = "5792319780:AAEjmtpDtFQu-IjOb1-gDRXOArlZIKBoWxk"
+bot = telebot.TeleBot(bot)
 
-'''
+sh_btn = types.InlineKeyboardButton(text='تحميل', callback_data='s1')
 
+@bot.message_handler(commands=["start"])
+def start(message):
+    
+    b = types.InlineKeyboardMarkup()
+    b.row_width = 2
+    b.add(sh_btn)
+    
+    bot.send_message(message.chat.id,f"""
+    *مرحبا بك {message.from_user.first_name} في بوت تحميل من تيك توك يحمل فيديو وصوت 💿*""",parse_mode='markdown',reply_markup=b)
 
-SS = "dev = @iq_python" 
-url = 'https://us-central1-chat-for-chatgpt.cloudfunctions.net/basicUserRequestBeta'
-
-def gpt(text) -> str:
- headers = {
-     'Host': 'us-central1-chat-for-chatgpt.cloudfunctions.net',
-     'Connection': 'keep-alive',
-     'If-None-Match': 'W/"1c3-Up2QpuBs2+QUjJl/C9nteIBUa00"',
-     'Accept': '*/*',
-     'User-Agent': 'com.tappz.aichat/1.2.2 iPhone/15.6.1 hw/iPhone8_2',
-     'Content-Type': 'application/json',
-     'Accept-Language': 'en-GB,en;q=0.9'
- }
- 
- data = {
-     'data': {
-         'message':text,
-     }
- }
-
- response = requests.post(url, headers=headers, data=json.dumps(data))
- try:
-  result = response.json()["result"]["choices"][0]["text"]
-  return result
- except:
-  return None 
-S = "run bot - ايات🌹💌 : @to_311"
-@bot.message_handler(func=lambda message: True)
-def mobrmg(message):
-    msg = gpt(message.text)
-    if msg:
-        markup = telebot.types.InlineKeyboardMarkup()
-        markup.add(telebot.types.InlineKeyboardButton(text='-ايه  .', url="https://t.me/to_311"))
-        bot.reply_to(message, msg, reply_markup=markup)
-    else:
-        bot.reply_to(message, "ما فهمت سؤالك ؟")
-print(S)
-print(SS)
-bot.polling()
+@bot.callback_query_handler(func=lambda call: True)
+def sh(call):
+  if call.data=='s1':
+   bot.send_message(call.message.chat.id,'- ارسل الرابط!')
+   @bot.message_handler(func=lambda m: True)
+   def Url(message):
+    bot.send_message(message.chat.id,"<strong>جاري التحميل انتظر قليلا ...</strong>",parse_mode="html")
+    msg = message.text
+    try:
+     url = request = get(f"https://www.tikwm.com/api/?url={url}").json()
+     a = url["video"]["videoURL"]
+     b = url['audioURL']
+     
+     bot.send_video(message.chat.id,a,caption='تم تحميل بواسطة @T_4IJ')
+     bot.send_voice(message.chat.id,b,caption='تم تحميل بواسطة @T_4IJ')
+    
+    
+    except:
+     bot.send_message(message.chat.id,"تأكد من الرابط..!")
+  
+print('run')
+bot.infinity_polling()
