@@ -66,8 +66,9 @@ def start(message):
 -» اشترك في القناة @{channel} .
 -» ثم ارسل /start ✅ </strong>''',reply_markup=z,parse_mode='html')
       aa = types.InlineKeyboardMarkup()
-
+      url = 'https://t.me/c/1926125917/7' 
       aa.add()
+      bot.send_video(message.chat.id,video)
       bot.send_message(message.chat.id,f"""*💌Welcome to the bot💌* [{a}](tg://user?id={id})*
 عذرا البوت عليه ضغط انتضر قليلا*
 """,parse_mode='markdown',reply_markup=aa,reply_to_message_id=message.message_id)
