@@ -69,9 +69,7 @@ def start(message):
 
       aa.add()
       bot.send_message(message.chat.id,f"""*💌Welcome to the bot💌* [{a}](tg://user?id={id})*
-اهلا \t بك في بوت التحميل من التيك توك 
-
-🌿❤️ لبدأ \t التحميل اضغط \n /TIKTOK*
+عذرا البوت عليه ضغط انتضر قليلا*
 """,parse_mode='markdown',reply_markup=aa,reply_to_message_id=message.message_id)
 @bot.message_handler(commands = ["TIKTOK"])
 @bot.message_handler(commands = ["TIKTOK"])
