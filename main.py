@@ -66,7 +66,7 @@ def start(message):
 -» اشترك في القناة @{channel} .
 -» ثم ارسل /start ✅ </strong>''',reply_markup=z,parse_mode='html')
       
-      video = 'https://t.me/c/1926125917/7' 
+      video = 'https://t.me/jbvhhvvh/7'
       
       bot.send_video(message.chat.id,video) 
 	    
