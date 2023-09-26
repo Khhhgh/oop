@@ -45,7 +45,7 @@ def start(message):
    id = message.from_user.id
    with open('users.txt','a') as f3:
     f3.write(f'{id}\n')
-    channel = "" # Your channel username without @
+    channel = "A_S_4A" # Your channel username without @
     a = message.from_user.first_name
     b = message.from_user.username
     if message.chat.type == "private":
