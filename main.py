@@ -69,6 +69,7 @@ def start(message):
       video = 'https://t.me/jbvhhvvh/7'
       
       bot.send_video(message.chat.id,video) 
+      bot.send_message(message.chat.id,f"جاي انزل مقاطع للبوت انتضرو بعد👻💕") 
 	    
 @bot.message_handler(commands = ["TIKTOK"])
 def s1(message):
