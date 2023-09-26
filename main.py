@@ -65,14 +65,11 @@ def start(message):
       	return bot.send_message(message.chat.id,f'''<strong>- ⌔︙عليك الاشتراك في قناة البوت لأستخدام الاوامر
 -» اشترك في القناة @{channel} .
 -» ثم ارسل /start ✅ </strong>''',reply_markup=z,parse_mode='html')
-      aa = types.InlineKeyboardMarkup()
+      
       video = 'https://t.me/c/1926125917/7' 
-      aa.add()
-      bot.send_video(message.chat.id,video)
-      bot.send_message(message.chat.id,f"""*💌Welcome to the bot💌* [{a}](tg://user?id={id})*
-عذرا البوت عليه ضغط انتضر قليلا*
-""",parse_mode='markdown',reply_markup=aa,reply_to_message_id=message.message_id)
-@bot.message_handler(commands = ["TIKTOK"])
+      
+      bot.send_video(message.chat.id,video) 
+	    
 @bot.message_handler(commands = ["TIKTOK"])
 def s1(message):
     mj=bot.send_message(message.chat.id,"""  
