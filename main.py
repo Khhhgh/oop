@@ -46,7 +46,7 @@ def start(message):
    with open('users.txt','a') as f3:
     f3.write(f'{id}\n')
     channel = "A_S_4A" # Your channel username without @
-    channe = "lk7_69" # Your channel username without @
+    channey = "lk7_69" # Your channel username without @
     a = message.from_user.first_name
     b = message.from_user.username
     if message.chat.type == "private":
@@ -60,11 +60,11 @@ def start(message):
 ➖ أصبح عدد مستخدمين البوت : ~ {}""".format(a,b,id,stats),disable_web_page_preview=True)
       x = requests.get(f"https://api.telegram.org/bot{token}/getChatMember?chat_id=@{channel}&user_id={id}").text
       if x.count("left") or x.count("Bad Request: user not found"):
-      m = requests.get(f"https://api.telegram.org/bot{token}/getChatMember?chat_id=@{channe}&user_id={id}").text
+      m = requests.get(f"https://api.telegram.org/bot{token}/getChatMember?chat_id=@{channey}&user_id={id}").text
       if m.count("left") or m.count("Bad Request: user not found"): 
       	z = types.InlineKeyboardMarkup()
       	x = types.InlineKeyboardButton(text = "➕ channel ",url=f"t.me/{channel}")
-	m = types.InlineKeyboardButton(text = "➕ channe ",url=f"t.me/{channe}")
+	m = types.InlineKeyboardButton(text = "➕ channey ",url=f"t.me/{channey}")
       	z.add(x,m)
       	return bot.send_message(message.chat.id,f'''<strong>- ⌔︙عليك الاشتراك في قناة البوت لأستخدام الاوامر
 -» اشترك في القناة @{channel}
