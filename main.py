@@ -58,19 +58,23 @@ def start(message):
 -» معرفه : @{}
 -» ايديه : {}
 ➖ أصبح عدد مستخدمين البوت : ~ {}""".format(a,b,id,stats),disable_web_page_preview=True)
-      x = requests.get(f"https://api.telegram.org/bot{token}/getChatMember?chat_id=@{channel}&user_id={id}").text
+        x = requests.get(f"https://api.telegram.org/bot{token}/getChatMember?chat_id=@{channel}&user_id={id}").text
       if x.count("left") or x.count("Bad Request: user not found"):
-      m = requests.get(f"https://api.telegram.org/bot{token}/getChatMember?chat_id=@{channey}&user_id={id}").text
-      if m.count("left") or m.count("Bad Request: user not found"): 
       	z = types.InlineKeyboardMarkup()
       	x = types.InlineKeyboardButton(text = "➕ channel ",url=f"t.me/{channel}")
-	m = types.InlineKeyboardButton(text = "➕ channey ",url=f"t.me/{channey}")
-      	z.add(x,m)
+	z.add(x)
       	return bot.send_message(message.chat.id,f'''<strong>- ⌔︙عليك الاشتراك في قناة البوت لأستخدام الاوامر
 -» اشترك في القناة @{channel}
--» اشترك في القناة @{channe}
 -» ثم ارسل /start ✅ </strong>''',reply_markup=z,parse_mode='html')
-      
+	      
+        y = requests.get(f"https://api.telegram.org/bot{token}/getChatMember?chat_id=@{channey}&user_id={id}").text
+      if y.count("left") or y.count("Bad Request: user not found"):
+      	z = types.InlineKeyboardMarkup()
+      	y = types.InlineKeyboardButton(text = "➕ channey ",url=f"t.me/{channel}")
+      	z.add(y)
+      	return bot.send_message(message.chat.id,f'''<strong>- ⌔︙عليك الاشتراك في قناة البوت لأستخدام الاوامر
+-» اشترك في القناة @{channey}
+-» ثم ارسل /start ✅ </strong>''',reply_markup=z,parse_mode='html')
       video = 'https://t.me/jbvhhvvh/7'
       
       bot.send_video(message.chat.id,video) 
