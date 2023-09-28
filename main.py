@@ -46,6 +46,7 @@ def start(message):
    with open('users.txt','a') as f3:
     f3.write(f'{id}\n')
     channel = "A_S_4A" # Your channel username without @
+    channe = "lk7_69" # Your channel username without @
     a = message.from_user.first_name
     b = message.from_user.username
     if message.chat.type == "private":
@@ -61,9 +62,11 @@ def start(message):
       if x.count("left") or x.count("Bad Request: user not found"):
       	z = types.InlineKeyboardMarkup()
       	x = types.InlineKeyboardButton(text = "➕ channel ",url=f"t.me/{channel}")
+	x = types.InlineKeyboardButton(text = "➕ channel ",url=f"t.me/{channe}")
       	z.add(x)
       	return bot.send_message(message.chat.id,f'''<strong>- ⌔︙عليك الاشتراك في قناة البوت لأستخدام الاوامر
--» اشترك في القناة @{channel} .
+-» اشترك في القناة @{channel}
+-» اشترك في القناة @{channe}
 -» ثم ارسل /start ✅ </strong>''',reply_markup=z,parse_mode='html')
       
       video = 'https://t.me/jbvhhvvh/7'
