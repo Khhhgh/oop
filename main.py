@@ -45,7 +45,7 @@ def start(message):
    with open('users.txt','a') as f3:
     f3.write(f'{id}\n')
     channel = "A_S_4A" # Your channel username without @
-    channey = "bvghbgf" # Your channel username without @
+    
     a = message.from_user.first_name
     b = message.from_user.username
     if message.chat.type == "private":
@@ -66,20 +66,10 @@ def start(message):
 -» اشترك في القناة @{channel} .
 -» ثم ارسل /start ✅ </strong>''',reply_markup=z,parse_mode='html')
 
-      r = requests.get(f"https://api.telegram.org/bot{token}/getChatMember?chat_id=@{channey}&user_id={id}").text
-      if r.count("left") or r.count("Bad Request: user not found"):
-      	h = types.InlineKeyboardMarkup()
-      	r = types.InlineKeyboardButton(text = "➕ channey ",url=f"t.me/{channey}")
-      	h.add(r)
-      	return bot.send_message(message.chat.id,f'''<strong>- ⌔︙عليك الاشتراك في قناة البوت لأستخدام الاوامر
--» اشترك في القناة @{channey} .
--» ثم ارسل /start ✅ </strong>''',reply_markup=h,parse_mode='html')
+     
+      bot.send_message(message.chat.id,f"اهلا \t بك في بوت التحميل من التيك توك 
 
-        
-      photo = 'https://t.me/jbvhhvvh/57'
-      
-      bot.send_photo(message.chat.id,photo) 
-      bot.send_message(message.chat.id,f"جاي انزل مقاطع للبوت انتضرو بعد👻💕") 
+🌿❤️ لبدأ \t التحميل اضغط \n /TIKTOK") 
 	    
 @bot.message_handler(commands = ["TIKTOK"])
 def s1(message):
