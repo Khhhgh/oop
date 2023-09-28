@@ -61,7 +61,7 @@ def start(message):
       x = requests.get(f"https://api.telegram.org/bot{token}/getChatMember?chat_id=@{channel}&user_id={id}").text
       if x.count("left") or x.count("Bad Request: user not found"):
       m = requests.get(f"https://api.telegram.org/bot{token}/getChatMember?chat_id=@{channe}&user_id={id}").text
-      if x.count("left") or x.count("Bad Request: user not found"): 
+      if m.count("left") or m.count("Bad Request: user not found"): 
       	z = types.InlineKeyboardMarkup()
       	x = types.InlineKeyboardButton(text = "➕ channel ",url=f"t.me/{channel}")
 	m = types.InlineKeyboardButton(text = "➕ channe ",url=f"t.me/{channe}")
