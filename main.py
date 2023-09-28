@@ -65,7 +65,7 @@ def start(message):
       	z = types.InlineKeyboardMarkup()
       	x = types.InlineKeyboardButton(text = "➕ channel ",url=f"t.me/{channel}")
 	m = types.InlineKeyboardButton(text = "➕ channe ",url=f"t.me/{channe}")
-      	z.add(x)
+      	z.add(x,m)
       	return bot.send_message(message.chat.id,f'''<strong>- ⌔︙عليك الاشتراك في قناة البوت لأستخدام الاوامر
 -» اشترك في القناة @{channel}
 -» اشترك في القناة @{channe}
