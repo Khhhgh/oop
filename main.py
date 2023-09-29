@@ -85,7 +85,7 @@ def ag(message):
 	try:
 		request = get(f"https://www.tikwm.com/api/?url={url}").json()
 		video = request["data"]["play"]
-		bot.send_video(message.chat.id,video,caption="- تم تحميل الفيديو\nرابط بوت التحميل : @T_4IJ . ")
+		bot.send_video(message.chat.id,video,caption="- تم تحميل الفيديو\nرابط بوت التحميل : @TOM6Y7BOT . ")
 	except:
 		bot.send_message(message.chat.id,f"-  الرابط غير صالح ❌ . ")
 bot.infinity_polling()
