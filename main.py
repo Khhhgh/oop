@@ -66,7 +66,7 @@ def start(message):
 -» اشترك في القناة @{channel} .
 -» ثم ارسل /start ✅ </strong>''',reply_markup=z,parse_mode='html')
 
-     
+      bot.send_photo(message.chat.id,'https://t.me/c/1644982063/8')
       bot.send_message(message.chat.id,f"اهلا\tبك\tلبدأ\tالتحميل\tاضغط\n/TIKTOK") 
 	    
 @bot.message_handler(commands = ["TIKTOK"])
