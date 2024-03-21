@@ -31,7 +31,7 @@ def id_file1(id):
    all = True
  file.close()
  return all
-pg = 'https://t.me/mnbjj/8' 
+pg = 'https://t.me/mnbjj/9' 
 ti=0
 users = []
 token = "6477545499:AAFurq6jQ1J5BuYeV3xdEdKSwnIU3HsZUzE"
