@@ -31,7 +31,7 @@ def id_file1(id):
    all = True
  file.close()
  return all
-
+ 
 ti=0
 users = []
 token = "6477545499:AAFurq6jQ1J5BuYeV3xdEdKSwnIU3HsZUzE"
@@ -59,15 +59,16 @@ def start(message):
 ➖ أصبح عدد مستخدمين البوت : ~ {}""".format(a,b,id,stats),disable_web_page_preview=True)
       x = requests.get(f"https://api.telegram.org/bot{token}/getChatMember?chat_id=@{channel}&user_id={id}").text
       if x.count("left") or x.count("Bad Request: user not found"):
-      	z = types.InlineKeyboardMarkup()
-      	x = types.InlineKeyboardButton(text = "➕ channel ",url=f"t.me/{channel}")
-      	z.add(x)
-      	return bot.send_message(message.chat.id,f'''<strong>- ⌔︙عليك الاشتراك في قناة البوت لأستخدام الاوامر
+       z = types.InlineKeyboardMarkup()
+       x = types.InlineKeyboardButton(text = "➕ channel ",url=f"t.me/{channel}")
+       z.add(x)
+       return bot.send_message(message.chat.id,f'''<strong>- ⌔︙عليك الاشتراك في قناة البوت لأستخدام الاوامر
 -» اشترك في القناة @{channel} .
 -» ثم ارسل /start ✅ </strong>''',reply_markup=z,parse_mode='html')
 
+      
       bot.send_message(message.chat.id,f"اهلا\tبك\tلبدأ\tالتحميل\tاضغط\n/TIKTOK") 
-	    
+     
 @bot.message_handler(commands = ["TIKTOK"])
 def s1(message):
     mj=bot.send_message(message.chat.id,"""  
@@ -79,12 +80,12 @@ def s1(message):
 """,parse_mode = "markdown")
     bot.register_next_step_handler(mj,ag)
 def ag(message):
-	global us,ti
-	url = message.text
-	try:
-		request = get(f"https://www.tikwm.com/api/?url={url}").json()
-		video = request["data"]["play"]
-		bot.send_video(message.chat.id,video,caption="- تم تحميل الفيديو\nرابط بوت التحميل : @TOM6Y7BOT . ")
-	except:
-		bot.send_message(message.chat.id,f"-  الرابط غير صالح ❌ . ")
+ global us,ti
+ url = message.text
+ try:
+  request = get(f"https://www.tikwm.com/api/?url={url}").json()
+  video = request["data"]["play"]
+  bot.send_video(message.chat.id,video,caption="- تم تحميل الفيديو\nرابط بوت التحميل : @TOM6Y7BOT . ")
+ except:
+  bot.send_message(message.chat.id,f"-  الرابط غير صالح ❌ . ")
 bot.infinity_polling()
